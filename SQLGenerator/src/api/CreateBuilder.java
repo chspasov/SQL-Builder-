@@ -1,5 +1,9 @@
 package api;
 
+import objects.Consumption;
+
+import java.lang.reflect.Field;
+
 /**
  * 
  * @author TsvetanSpasov
@@ -45,5 +49,25 @@ public class CreateBuilder {
 		createQuery.append(");");
 
 		return createQuery.toString();
+	}
+
+	public static void main(String[] args) {
+		CreateBuilder c = new CreateBuilder();
+		System.out.println(c.createSQLQuery(args));
+
+		System.out.println();
+
+		Consumption example = new Consumption("123", true, 123);
+		InsertBuilder insertConstumption = new InsertBuilder(example.getClass()
+				.getName());
+		Field[] fields = example.getClass().getDeclaredFields();
+
+		insertConstumption.set(fields[0].getName(), example.getDeviceID());
+		insertConstumption.set(fields[1].getName(), insertConstumption
+				.translateFromBooleanToBit(example.isCarbonNeutral()));
+		insertConstumption.set(fields[2].getName(),
+				Float.toString(example.getValue()));
+		System.out.println(insertConstumption.toString());
+
 	}
 }
