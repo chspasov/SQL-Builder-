@@ -33,8 +33,12 @@ public class Consumption {
 	/**
 	 * @return the carbonNeutral
 	 */
-	public boolean isCarbonNeutral() {
-		return carbonNeutral;
+	public String isCarbonNeutral() {
+		if (carbonNeutral) {
+			return "1";
+		} else {
+			return "0";
+		}
 	}
 
 	/**
