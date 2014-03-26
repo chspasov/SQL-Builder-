@@ -53,7 +53,11 @@ public class Consumption {
 	 *            the deviceID to set
 	 */
 	public void setDeviceID(String deviceID) {
-		this.deviceID = deviceID;
+		if (deviceID != null) {
+			this.deviceID = deviceID;
+		} else {
+			this.deviceID = "NULL";
+		}
 	}
 
 	/**

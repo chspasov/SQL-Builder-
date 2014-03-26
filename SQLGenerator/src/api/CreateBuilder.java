@@ -57,7 +57,7 @@ public class CreateBuilder {
 
 		System.out.println();
 
-		Consumption example = new Consumption("123", true, 123);
+		Consumption example = new Consumption(null, true, 123);
 		InsertBuilder insertConstumption = new InsertBuilder(example.getClass().getSimpleName());
 		Field[] fields = example.getClass().getDeclaredFields();
 
