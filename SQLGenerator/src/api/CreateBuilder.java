@@ -57,14 +57,13 @@ public class CreateBuilder {
 
 		System.out.println();
 
-		Consumption example = new Consumption("123", true, 123);
+		Consumption example = new Consumption("ABSC", true, 123);
 		InsertBuilder insertConstumption = new InsertBuilder(example.getClass()
-				.getName());
+				.getSimpleName());
 		Field[] fields = example.getClass().getDeclaredFields();
 
 		insertConstumption.set(fields[0].getName(), example.getDeviceID());
-		insertConstumption.set(fields[1].getName(), insertConstumption
-				.translateFromBooleanToBit(example.isCarbonNeutral()));
+		insertConstumption.set(fields[1].getName(), example.isCarbonNeutral());
 		insertConstumption.set(fields[2].getName(),
 				Float.toString(example.getValue()));
 		System.out.println(insertConstumption.toString());
