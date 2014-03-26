@@ -37,6 +37,14 @@ public class InsertBuilder {
 		return this;
 	}
 
+	public String translateFromBooleanToBit(boolean atribute) {
+		if (atribute) {
+			return "1";
+		} else {
+			return "0";
+		}
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sql = new StringBuilder("INSERT INTO ").append(table)
