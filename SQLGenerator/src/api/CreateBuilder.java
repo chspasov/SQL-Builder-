@@ -14,7 +14,7 @@ import java.lang.reflect.Field;
 public class CreateBuilder {
 
 	public static final String NOT_NULL = "NOT NULL";
-	public static final String UNIQUE = "UNIQUE";
+	public static final String UNIQUE_E = "UNIQUE";
 	public static final String PRIMARY_KEY = "PRIMARY KEY";
 
 	public CreateBuilder() {
